@@ -100,12 +100,6 @@ CSS
 
 /* Fluid picture */
 
-.ixi-fluid { 
-	width: 100%; 
-	max-width: 100%;
-	height: auto;
-}
-
 .ixi-picture--fluid { 
 	display: flex;
 	align-items: stretch;
@@ -172,16 +166,14 @@ CSS
 
 HTML
 ```html
-<div class="ixi-fluid">
-	<figure class="ixi-picture ixi-picture--fluid" data-id="img-8">
-		<picture class="ixi-picture__picture ixi-picture__placeholder">
-			<source media="(min-width: 1025px)" srcset="imgs/8-large-landscape.png, imgs/8-large-landscape@2x.png 2x">
-			<source media="(min-width: 700px)" class="ixi-picture__medium" srcset="imgs/8-medium-landscape.png, imgs/8-medium-landscape@2x.png 2x">
-			<source media="(max-width: 699px)" class="ixi-picture__small" srcset="imgs/8-small-square.png, imgs/8-small-square@2x.png 2x">
-			<img alt="" class="ixi-picture__img" src="imgs/8-small-square.png">
-		</picture>
-	</figure>
-</div>
+<figure class="ixi-picture ixi-picture--fluid" data-id="img-8">
+	<picture class="ixi-picture__picture ixi-picture__placeholder">
+		<source media="(min-width: 1025px)" srcset="imgs/8-large-landscape.png, imgs/8-large-landscape@2x.png 2x">
+		<source media="(min-width: 700px)" class="ixi-picture__medium" srcset="imgs/8-medium-landscape.png, imgs/8-medium-landscape@2x.png 2x">
+		<source media="(max-width: 699px)" class="ixi-picture__small" srcset="imgs/8-small-square.png, imgs/8-small-square@2x.png 2x">
+		<img alt="" class="ixi-picture__img" src="imgs/8-small-square.png">
+	</picture>
+</figure>
 ```
 
 
