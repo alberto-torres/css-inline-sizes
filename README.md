@@ -45,7 +45,6 @@ CSS
    display: inline-block;
 }
 
-
 /* Media queries for image sizes */
 
 [data-id='img-1'] .ixi-picture__img {
@@ -101,13 +100,13 @@ CSS
 
 /* Fluid picture */
 
-.ixn-fluid { 
+.ixi-fluid { 
 	width: 100%; 
 	max-width: 100%;
 	height: auto;
 }
 
-.ixn-picture--fluid { 
+.ixi-picture--fluid { 
 	display: flex;
 	align-items: stretch;
 	justify-content: center;
@@ -115,7 +114,7 @@ CSS
 
 }
 
-	.ixn-picture--fluid .ixn-picture__picture {
+	.ixi-picture--fluid .ixi-picture__picture {
 		align-items: center;
 		display: inline-flex;
 		margin: 0 !important;
@@ -125,11 +124,10 @@ CSS
 		min-height: 100%;
 	}
 
-	.ixn-picture--fluid .ixn-picture__img {
+	.ixi-picture--fluid .ixi-picture__img {
 		min-width: 100%;
 		min-height: 100%;
 	}
-
 
 /* Media queries for image sizes 
  * Image 2 uses the aspect ratio fix
