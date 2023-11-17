@@ -33,7 +33,7 @@ In essence, to apply the css inline sizes fix add the different image sizes in t
 
 CSS
 
-```
+```css
 
 /* IMG placeholder graphic */
 
@@ -77,7 +77,7 @@ CSS
 ```
 
 HTML
-```
+```html
 
 <figure class="ixi-picture" data-id="img-1">
 			   	
@@ -100,7 +100,7 @@ HTML
 ### Responsive images
 
 CSS
-```
+```css
 
 /* IMG placeholder graphic */
 
@@ -162,7 +162,7 @@ CSS
 ```
 
 HTML
-```
+```html
 
 <div class="ixi-fluid">
 
