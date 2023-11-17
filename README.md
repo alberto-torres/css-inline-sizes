@@ -34,7 +34,6 @@ In essence, to apply the css inline sizes fix add the different image sizes in t
 CSS
 
 ```css
-
 /* IMG placeholder graphic */
 
 .ixi-picture__placeholder {   
@@ -49,12 +48,10 @@ CSS
 
 /* Media queries for image sizes */
 
-
 [data-id='img-1'] .ixi-picture__img {
 	height: 325px;
 	width: 325px 
 }
-
 
 @media only screen and (min-width: 700px) {
 
@@ -73,35 +70,24 @@ CSS
 	}
 
 }
-
 ```
 
 HTML
 ```html
-
 <figure class="ixi-picture" data-id="img-1">
-			   	
-   	<picture class="ixi-picture__picture ixi-picture__placeholder">
-
-			<source media="(min-width: 1025px)" srcset="imgs/1-large-landscape.png, imgs/1-large-landscape@2x.png 2x">
-		
-			<source media="(min-width: 700px)" class="ixi-picture__medium" srcset="imgs/1-medium-landscape.png, imgs/1-medium-landscape@2x.png 2x">
-		
-			<source media="(max-width: 699px)" class="ixi-picture__small" srcset="imgs/1-small-square.png, imgs/1-small-square@2x.png 2x">
-		
-			<img alt="A panoramic view of the jungle with a river and mountains" class="ixi-picture__img" src="imgs/1-small-square.png">
-
-   	</picture>
-
+	<picture class="ixi-picture__picture ixi-picture__placeholder">
+		<source media="(min-width: 1025px)" srcset="imgs/1-large-landscape.png, imgs/1-large-landscape@2x.png 2x">
+		<source media="(min-width: 700px)" class="ixi-picture__medium" srcset="imgs/1-medium-landscape.png, imgs/1-medium-landscape@2x.png 2x">
+		<source media="(max-width: 699px)" class="ixi-picture__small" srcset="imgs/1-small-square.png, imgs/1-small-square@2x.png 2x">
+		<img alt="A panoramic view of the jungle with a river and mountains" class="ixi-picture__img" src="imgs/1-small-square.png">
+	</picture>
 </figure>
-
 ```
 
 ### Responsive images
 
 CSS
 ```css
-
 /* IMG placeholder graphic */
 
 .ixi-picture__placeholder {   
@@ -113,13 +99,42 @@ CSS
    display: inline-block;
 }
 
+/* Fluid picture */
+
+.ixn-fluid { 
+	width: 100%; 
+	max-width: 100%;
+	height: auto;
+}
+
+.ixn-picture--fluid { 
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	flex-direction: column;
+
+}
+
+	.ixn-picture--fluid .ixn-picture__picture {
+		align-items: center;
+		display: inline-flex;
+		margin: 0 !important;
+		max-width: 100%;
+		max-height: 100%;
+		min-width: 100%;
+		min-height: 100%;
+	}
+
+	.ixn-picture--fluid .ixn-picture__img {
+		min-width: 100%;
+		min-height: 100%;
+	}
+
 
 /* Media queries for image sizes 
  * Image 2 uses the aspect ratio fix
  * 
  */
-
-
 
 /* Image sizes is 325x325 */
 
@@ -136,11 +151,9 @@ CSS
 		left: 0;
 	}
 
-
 @media only screen and (min-width: 700px) {
 
 	/* Image sizes is 600x410 */
-
 	[data-id='img-2'] .ixi-picture__picture  {
 		padding-top: calc(410 / 600 * 100%);
 		width: 600px 
@@ -151,39 +164,26 @@ CSS
 @media only screen and (min-width: 1025px) {
 
 	/* Image sizes is 1024x700 */
-
 	[data-id='img-2'] .ixi-picture__picture {
 		padding-top: calc(700 / 1024 * 100%);
 		width: 1024px 
 	}
 
 }
-
 ```
 
 HTML
 ```html
-
 <div class="ixi-fluid">
-
 	<figure class="ixi-picture ixi-picture--fluid" data-id="img-8">
-			
-			<picture class="ixi-picture__picture ixi-picture__placeholder">
-			
-				<source media="(min-width: 1025px)" srcset="imgs/8-large-landscape.png, imgs/8-large-landscape@2x.png 2x">
-			
-				<source media="(min-width: 700px)" class="ixi-picture__medium" srcset="imgs/8-medium-landscape.png, imgs/8-medium-landscape@2x.png 2x">
-			
-				<source media="(max-width: 699px)" class="ixi-picture__small" srcset="imgs/8-small-square.png, imgs/8-small-square@2x.png 2x">
-			
-				<img alt="" class="ixi-picture__img" src="imgs/8-small-square.png">
-
+		<picture class="ixi-picture__picture ixi-picture__placeholder">
+			<source media="(min-width: 1025px)" srcset="imgs/8-large-landscape.png, imgs/8-large-landscape@2x.png 2x">
+			<source media="(min-width: 700px)" class="ixi-picture__medium" srcset="imgs/8-medium-landscape.png, imgs/8-medium-landscape@2x.png 2x">
+			<source media="(max-width: 699px)" class="ixi-picture__small" srcset="imgs/8-small-square.png, imgs/8-small-square@2x.png 2x">
+			<img alt="" class="ixi-picture__img" src="imgs/8-small-square.png">
 		</picture>
-
 	</figure>
-
 </div>
-
 ```
 
 
