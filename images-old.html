@@ -4,32 +4,21 @@
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           
-          <link rel="stylesheet" href="lazyload.css">
+          <link rel="stylesheet" href="../theme-styles.css">
 
           <style>
 
           	/* The style in this block are for layout purposes */
 
-          	/* Lazyload -------------------------------------
-			*  https://github.com/aFarkas/lazysizes
-			*/
 
-			.lazyload,
-			.lazyloading {
-			   opacity: 0;
+			/* Placeholder graphic */
+
+			.ixn-picture__placeholder {  
+				background: #ffffa6 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjMuMzkgMjM4LjI1Ij48ZGVmcz48c3R5bGU+LmF7ZmlsbDojZmZmO308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iYSIgZD0iTTE1OSwyMzguMjUsMCwwSDguNjdMMTYzLjM5LDIzOC4yNVoiLz48L3N2Zz4=") left top  no-repeat; 
+				background-size: 100% 100%;
+			   	display: inline-block;
 			}
 
-
-			/* Lazyload placeholder graphic */
-
-			.ixn-picture__placeholder {   
-			   background-color: #ffffd9; 
-			   background-position: left top;
-			   background-repeat: no-repeat; 
-			   background-size: 100% 100%;
-			   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjMuMzkgMjM4LjI1Ij48ZGVmcz48c3R5bGU+LmF7ZmlsbDojZmZmO308L3N0eWxlPjwvZGVmcz48cGF0aCBjbGFzcz0iYSIgZD0iTTE1OSwyMzguMjUsMCwwSDguNjdMMTYzLjM5LDIzOC4yNVoiLz48L3N2Zz4=");
-			   display: inline-block;
-			}
 
 			/* Figure */
 			
@@ -165,9 +154,6 @@
 
 			}
 
-			
-
-
           </style>
 
      </head>
@@ -175,7 +161,7 @@
 
           <div class="container">
 
-               <h1>CSS inline sizes</h1>
+               <h1>CSS inline sizes - demo</h1>
                <p>It fixes the content reflow issue on art directed images</p>
 
                <style>
@@ -207,15 +193,15 @@
 						width: 272.5px;
 					}
 
-					[data-id='img-6'] .ixn-picture__img {
-						height: 325px;
-						width: 325px;
-					}
-
-					[data-id='img-7'] .ixn-picture__img { 
+					[data-id='img-6'] .ixn-picture__img { 
 						height: 70px; 
 						width: 200px;
 					}
+
+					[data-id='img-7'] .ixn-picture__img {
+						height: 325px;
+						width: 325px;
+					}					
 
 					/* Image 8 uses the aspect ratio fix */
 					[data-id='img-8'] .ixn-picture__picture {
@@ -260,7 +246,7 @@
 						width: 383px;
 					}
 
-					[data-id='img-6'] .ixn-picture__img {
+					[data-id='img-7'] .ixn-picture__img {
 						height: 280px;
 						width: 400px;
 					}
@@ -289,7 +275,7 @@
 						width: 450px;
 					}
 
-					[data-id='img-6'] .ixn-picture__img {
+					[data-id='img-7'] .ixn-picture__img {
 						height: 500px;
 						width: 350px;
 					}
@@ -313,11 +299,6 @@
 						width: 325px;
 					}
 
-					[data-id='img-4'] .ixn-picture__img {
-						height: 325px;
-						width: 325px;
-				    	}
-
 					[data-id="img-9"] .ixn-picture__img {
 						height: 325px;
 						width: 325px;
@@ -332,15 +313,17 @@
 			   	
 			   	<picture class="ixn-picture__picture ixn-picture__placeholder">
 
-					<source media="(min-width: 1025px)" data-srcset="imgs/1-large-landscape.png, imgs/1-large-landscape@2x.png 2x">
+					<source media="(min-width: 1025px)" srcset="imgs/1-large-landscape.png, imgs/1-large-landscape@2x.png 2x">
 					
-					<source media="(min-width: 700px)" class="ixn-picture__medium" data-srcset="imgs/1-medium-landscape.png, imgs/1-medium-landscape@2x.png 2x">
+					<source media="(min-width: 700px)" class="ixn-picture__medium" srcset="imgs/1-medium-landscape.png, imgs/1-medium-landscape@2x.png 2x">
 					
-					<source media="(max-width: 699px)" class="ixn-picture__small" data-srcset="imgs/1-small-square.png, imgs/1-small-square@2x.png 2x">
+					<source media="min-width: 375px" class="ixn-picture__small" srcset="imgs/1-small-square.png, imgs/1-small-square@2x.png 2x">
 					
-					<img alt="A panoramic view of the jungle with a river and mountains" class="ixn-picture__img lazyload" data-src="imgs/1-small-square.png">
+					<img alt="A panoramic view of the jungle with a river and mountains" class="ixn-picture__img" src="imgs/1-small-square.png">
 
 			   	</picture>
+
+			   	<figcaption class="ixn-gallery__caption">#1</figcaption>
 
 			</figure>
 
@@ -356,15 +339,17 @@
 
 						<picture class="ixn-picture__picture ixn-picture__placeholder">
 							
-							<source media="(min-width: 1200px)" data-srcset="imgs/2-medium-square.png, imgs/2-medium-square@2x.png 2x" class="ixn-picture__large">
+							<source media="(min-width: 1200px)" srcset="imgs/2-medium-square.png, imgs/2-medium-square@2x.png 2x" class="ixn-picture__large">
 
-							<source media="(min-width: 700px)" data-srcset="imgs/2-small-square.png, imgs/2-small-square@2x.png 2x" class=" ixn-picture__medium">
+							<source media="(min-width: 700px)" srcset="imgs/2-small-square.png, imgs/2-small-square@2x.png 2x" class=" ixn-picture__medium">
 
-							<source media="(max-width: 699px)" data-srcset="imgs/2-medium-square.png, imgs/2-medium-square@2x.png 2x" class="ixn-picture__small">
+							<source media="min-width: 375px" srcset="imgs/2-medium-square.png, imgs/2-medium-square@2x.png 2x" class="ixn-picture__small">
 
-							<img alt="" class="ixn-picture__img lazyload" data-src="imgs/2-medium-square.png.jpg">
+							<img alt="" class="ixn-picture__img" src="imgs/2-medium-square.png">
 
 						</picture>
+
+						<figcaption class="ixn-gallery__caption">#2</figcaption>
 
 					</figure>
 
@@ -376,15 +361,17 @@
 
 						<picture class="ixn-picture__picture ixn-picture__placeholder">
 							
-							<source media="(min-width: 1200px)" data-srcset="imgs/3-medium-portrait.png, imgs/3-medium-portrait@2x.png 2x" class="ixn-picture__large">
+							<source media="(min-width: 1200px)" srcset="imgs/3-medium-portrait.png, imgs/3-medium-portrait@2x.png 2x" class="ixn-picture__large">
 							
-							<source media="(min-width: 700px)" data-srcset="imgs/3-small-portrait.png, imgs/3-small-portrait.png 2x" class=" ixn-gallery__medium ">
+							<source media="(min-width: 700px)" srcset="imgs/3-small-portrait.png, imgs/3-small-portrait.png 2x" class=" ixn-gallery__medium ">
 
-							<source media="(max-width: 699px)" data-srcset="imgs/3-medium-portrait.png, imgs/3-medium-portrait@2x.png 2x" class=" ixn-gallery__small">
+							<source media="min-width: 375px" srcset="imgs/3-medium-portrait.png, imgs/3-medium-portrait@2x.png 2x" class=" ixn-gallery__small">
 							
-							<img class="ixn-picture__img ixn-gallery__img lazyload" data-src="imgs/2-medium-portrait.png">
+							<img class="ixn-picture__img ixn-gallery__img" src="imgs/2-medium-portrait.png">
 
 						</picture>
+
+						<figcaption class="ixn-gallery__caption">#3</figcaption>
 
 					</figure>
 
@@ -396,18 +383,18 @@
 
 						<picture class="ixn-picture__picture ixn-picture__placeholder">
 							
-							<source media="(max-width: 1200px)" data-srcset="imgs/4-medium-square.png, imgs/4-medium-square@2x.png 2x" class="ixn-picture__small">
+							<source media="(max-width: 1200px)" srcset="imgs/4-medium-square.png, imgs/4-medium-square@2x.png 2x" class="ixn-picture__small">
 
-							<source media="(min-width: 700px)" data-srcset="imgs/4-small-square.png, imgs/4-small-square@2x.png 2x" class=" ixn-picture__medium">
+							<source media="(min-width: 700px)" srcset="imgs/4-small-square.png, imgs/4-small-square@2x.png 2x" class=" ixn-picture__medium">
 
-							<source media="(max-width: 699px)" data-srcset="imgs/4-medium-square.png, imgs/4-medium-square@2x.png 2x" class="ixn-picture__small">
+							<source media="min-width: 375px" srcset="imgs/4-medium-square.png, imgs/4-medium-square@2x.png 2x" class="ixn-picture__small">
 
-							<img alt="" class="ixn-picture__img lazyload" data-src="imgs/4-medium-square.png">
+							<img alt="" class="ixn-picture__img" src="imgs/4-medium-square.png">
 
 						</picture>
 
-						<figcaption class="ixn-gallery__caption">AI generated images</figcaption>
-						
+						<figcaption class="ixn-gallery__caption">#4 - AI generated images</figcaption>
+
 					</figure>
 
 				</div>
@@ -418,29 +405,17 @@
 
 						<picture class="ixn-picture__picture ixn-picture__placeholder">
 							
-							<source media="(min-width: 1025px)" data-srcset="imgs/5-large-landscape.png, imgs/5-large-landscape@2x.png 2x" class="ixn-picture__large">
+							<source media="(min-width: 1025px)" srcset="imgs/5-large-landscape.png, imgs/5-large-landscape@2x.png 2x" class="ixn-picture__large">
 
-							<source media="(min-width: 700px)" data-srcset="imgs/5-medium-square.png, imgs/5-medium-square@2x.png 2x" class=" ixn-picture__medium">
+							<source media="(min-width: 700px)" srcset="imgs/5-medium-square.png, imgs/5-medium-square@2x.png 2x" class=" ixn-picture__medium">
 
-							<source media="(max-width: 699px)" data-srcset="imgs/5-small-portrait.png, imgs/5-small-portrait@2x.png 2x" class="ixn-picture__small">
+							<source media="min-width: 375px" srcset="imgs/5-small-portrait.png, imgs/5-small-portrait@2x.png 2x" class="ixn-picture__small">
 
-							<img alt="" class="ixn-picture__img lazyload" data-src="imgs/5-small-portrait.png">
-
-						</picture>
-
-					</figure>
-
-				</div>
-
-				<div class="ixn-flexbox__item">
-
-					<figure class="ixn-picture" data-id="img-7">
-
-						<picture class="ixn-picture__picture ixn-picture__placeholder">
-							
-							<img alt="" class="ixn-picture__img lazyload" data-src="imgs/7-small-landscape@2x.png">
+							<img alt="" class="ixn-picture__img" src="imgs/5-small-portrait.png">
 
 						</picture>
+
+						<figcaption class="ixn-gallery__caption">#5</figcaption>
 
 					</figure>
 
@@ -452,15 +427,33 @@
 
 						<picture class="ixn-picture__picture ixn-picture__placeholder">
 							
-							<source media="(min-width: 1025px)" data-srcset="imgs/6-large-portrait.png, imgs/6-large-portrait@2x.png 2x" class="ixn-picture__large">
-
-							<source media="(min-width: 700px)" data-srcset="imgs/6-medium-landscape.png, imgs/6-medium-landscape@2x.png 2x" class=" ixn-picture__medium">
-
-							<source media="(max-width: 699px)" data-srcset="imgs/6-small-square.png, imgs/6-small-square@2x.png 2x" class="ixn-picture__small">
-
-							<img alt="" class="ixn-picture__img lazyload" data-src="imgs/6-small-square.png">
+							<img alt="" class="ixn-picture__img" src="imgs/7-small-landscape@2x.png">
 
 						</picture>
+
+						<figcaption class="ixn-gallery__caption">#6</figcaption>
+
+					</figure>
+
+				</div>
+
+				<div class="ixn-flexbox__item">
+
+					<figure class="ixn-picture" data-id="img-7">
+
+						<picture class="ixn-picture__picture ixn-picture__placeholder">
+							
+							<source media="(min-width: 1025px)" srcset="imgs/6-large-portrait.png, imgs/6-large-portrait@2x.png 2x" class="ixn-picture__large">
+
+							<source media="(min-width: 700px)" srcset="imgs/6-medium-landscape.png, imgs/6-medium-landscape@2x.png 2x" class=" ixn-picture__medium">
+
+							<source media="min-width: 375px" srcset="imgs/6-small-square.png, imgs/6-small-square@2x.png 2x" class="ixn-picture__small">
+
+							<img alt="" class="ixn-picture__img" src="imgs/6-small-square.png">
+
+						</picture>
+
+						<figcaption class="ixn-gallery__caption">#7</figcaption>
 
 					</figure>
 
@@ -477,15 +470,17 @@
 
 				   	<picture class="ixn-picture__picture ixn-picture__placeholder">
 						
-						<source media="(min-width: 1025px)" data-srcset="imgs/8-large-landscape.png, imgs/8-large-landscape@2x.png 2x">
+						<source media="(min-width: 1025px)" srcset="imgs/8-large-landscape.png, imgs/8-large-landscape@2x.png 2x">
 						
-						<source media="(min-width: 700px)" class="ixn-picture__medium" data-srcset="imgs/8-medium-landscape.png, imgs/8-medium-landscape@2x.png 2x">
+						<source media="(min-width: 700px)" class="ixn-picture__medium" srcset="imgs/8-medium-landscape.png, imgs/8-medium-landscape@2x.png 2x">
 						
-						<source media="(max-width: 699px)" class="ixn-picture__small" data-srcset="imgs/8-small-square.png, imgs/8-small-square@2x.png 2x">
+						<source media="min-width: 375px" class="ixn-picture__small" srcset="imgs/8-small-square.png, imgs/8-small-square@2x.png 2x">
 						
-						<img alt="" class="ixn-picture__img lazyload" data-src="imgs/8-small-square.png">
+						<img alt="" class="ixn-picture__img" src="imgs/8-small-square.png">
 
 				   	</picture>
+
+				   	<figcaption class="ixn-gallery__caption">#8</figcaption>
 
 				</figure>
 
@@ -499,13 +494,17 @@
          
 					<picture class="ixn-picture__picture ixn-picture__placeholder ixn-picture-floating__picture">
 
-						<source media="(max-width: 699px)" class="ixn-picture-floating__small" data-srcset="imgs/9-small-square.png, imgs/9-small-square@2x.png 2x">
+						<!--[if IE 9]><video style="display: none;"><![endif]-->
+						<source media="min-width: 375px" class="ixn-picture-floating__small" srcset="imgs/9-small-square.png, imgs/9-small-square@2x.png 2x">
 
-						<source media="(min-width: 700px)" class="ixn-picture-floating__medium" data-srcset="imgs/9-medium-square.png, imgs/9-medium-square@2x.png 2x">
+						<source media="(min-width: 700px)" class="ixn-picture-floating__medium" srcset="imgs/9-medium-square.png, imgs/9-medium-square@2x.png 2x">
+						<!--[if IE 9]></video><![endif]-->
 
-						<img alt="" class="ixn-picture__img lazyload" data-src="imgs/9-small-square.png">
+						<img alt="" class="ixn-picture__img" src="imgs/9-small-square.png">
 
 					</picture>
+
+					<figcaption class="ixn-gallery__caption">#9</figcaption>
 
 				</figure>
 
@@ -513,14 +512,12 @@
 
 		     </div>
 
+
 	     </div>
 
-          <p><a href="">Go to full article</a><br><a href="">Go to GitHub</a></p>
+          <p><a href="">Go to full article</a><br><a href="https://github.com/alberto-torres/css-inline-sizes/">Go to GitHub</a></p>
           <p>&nbsp;</p>
           <p>&nbsp;</p>
-
-          <!-- Javascript after DOM is loaded -->
-          <script src="lazyload.js"></script> 
 
      </body>
 </html>
