@@ -137,7 +137,7 @@ CSS
 
 /* Image size is 325x325 */
 
-[data-id='img-2'] .ixi-picture__picture {
+[data-id='img-8'] .ixi-picture__picture {
 	padding-top: calc( (325 / 325) * 100%);
 	width: 325px;
 }
@@ -145,7 +145,7 @@ CSS
 @media only screen and (min-width: 700px) {
 
 	/* Image size is 600x410 */
-	[data-id='img-2'] .ixi-picture__picture  {
+	[data-id='img-8'] .ixi-picture__picture  {
 		padding-top: calc(410 / 600 * 100%);
 		width: 600px 
 	}
@@ -155,7 +155,7 @@ CSS
 @media only screen and (min-width: 1025px) {
 
 	/* Image size is 1024x700 */
-	[data-id='img-2'] .ixi-picture__picture {
+	[data-id='img-8'] .ixi-picture__picture {
 		padding-top: calc(700 / 1024 * 100%);
 		width: 1024px 
 	}
