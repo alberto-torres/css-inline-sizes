@@ -19,6 +19,7 @@ The full documentation for the demo can be seen [here](https://ixi.studio/conten
 - Load the demo in your web browser
 - Lower your bandwidth using the inspector tool on your browser and reload the page.
 - Use the responsive design mode to resize the screen as the page loads.
+- Disable your cache if you want reload page and test again
 
 ### Links: 
 
@@ -120,11 +121,16 @@ CSS
 		max-height: 100%;
 		min-width: 100%;
 		min-height: 100%;
+		position: relative;
 	}
 
 	.ixi-picture--fluid .ixi-picture__img {
 		min-width: 100%;
 		min-height: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 
 /* Media queries for image sizes */
@@ -133,16 +139,8 @@ CSS
 
 [data-id='img-2'] .ixi-picture__picture {
 	padding-top: calc( (325 / 325) * 100%);
-	position: relative;
+	width: 325px;
 }
-
-	[data-id='img-2'] .ixi-picture__img {
-		width: 325px;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-	}
 
 @media only screen and (min-width: 700px) {
 
